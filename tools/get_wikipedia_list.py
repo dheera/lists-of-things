@@ -14,7 +14,7 @@ if r.status_code != 200:
 
 count = 0
 for line in r.text.split('\n'):
-    if line.startswith('* [['):
+    if line.startswith('* [[') or line.startswith('*[['):
        result = re.search('\\[\\[(.*?)\\]\\]', line)
        if not result:
            continue
